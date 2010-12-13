@@ -1,6 +1,6 @@
 ## Usage
 
-First of all you should set up your API key and secret in config file **config/geolocator.php**. You can disable caching so Geolocator wil always check API for given IP, otherwise it will check once for every IP address and store retrieved data in encoded cookie (In free account you have limit of 2 requests per second or 1000 a day, so it's useful. :) ). :
+First of all you should set up your API key and secret in config file **config/geolocator.php**. The API key and secret can be obtained from [Quova Developer website](http://developer.quova.com/). You can disable caching so Geolocator wil always check API for given IP, otherwise it will check once for every IP address and store retrieved data in encoded cookie (In free account you have limit of 2 requests per second or 1000 a day, so it's useful. :) ). :
 
 		return array
 		(
