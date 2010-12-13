@@ -14,7 +14,7 @@ Create an geolocator and send request
 
 		$geolocator = Geolocator::factory('127.0.0.1');
 		$geolocation = $geolocator->execute();
-		echo 'You live in ' . $geolocation->location->country . ', in the city of ' . $geolocation->location->country . '<br />' ; 
+		echo 'You live in ' . $geolocation->location->country . ', in the city of ' . $geolocation->location->city . '<br />' ; 
 		echo 'Your ISP is: ' . $geolocation->network->carrier . '<br />';
 
 Of course the methods are chainable so to obtain ie. code of the country you can simply do:
