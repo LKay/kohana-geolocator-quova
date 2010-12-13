@@ -18,7 +18,7 @@ class Geolocator {
 	}
 	
 	public function __construct($ip = NULL) {
-		if (!Validate::ip($ip)) {
+		if (isset($ip) && !Validate::ip($ip)) {
 			throw new Geolocator_Exception('Error creating object [ status :code ] Incorrect IP address',array(':code'=>999));
 		}
 		$this->ip = $ip;
@@ -34,6 +34,10 @@ class Geolocator {
 	}
 	
 	public function execute() {
+		if (!$this->ip) {
+			throw new Geolocator_Exception('Error executing request [ status :code ] Incorrect IP address',array(':code'=>999));
+		}
+		
 		$query = http_build_query(array(
 			'apikey' => $this->_api_key,
 			'sig'    => $this->_get_sig(),
